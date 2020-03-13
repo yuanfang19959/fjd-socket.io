@@ -10,3 +10,43 @@
 
 ## 流程图
 ![流程图](./assets/img/liuc.png)
+
+
+## 发送两种方式图片
++ 第一种，发送图片快。缺点两台电脑可能看不到图片。目前正在寻找解决方案
+`       
+        // 获取图片
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjcectURL != undefined) {
+                url = window.createOjcectURL(file);
+            } else if (window.URL != undefined) {
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) {
+                url = window.webkitURL.createObjectURL(file);
+            }
+            console.log(url);
+            return url;
+        }
+
+        var file = $(".upload");
+        file.change(function () {
+            sendMes(1, getObjectURL(file[0].files[0]), userID);
+        });
+`
+
++ 第二种，发送图片慢。两台电脑之间可以收到图片，但是慢。我的服务器不是很给力
+`       
+        var file = document.querySelector(".upload");
+        file.onchange = function () {
+            Array.from(this.files).forEach(fileItem => {
+            var reader = new FileReader();
+            reader.readAsDataURL(fileItem);
+            reader.onload = function() {
+                console.log(fileItem)
+                console.log(reader.result)
+                sendMes(1, reader.result, userID);
+            }
+        })
+}
+`

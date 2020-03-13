@@ -80,8 +80,22 @@ $(document).ready(function () {
     })
 
     // 获取图片并发送
-    var file = $(".upload");
-    file.change(function () {
-        sendMes(1, getObjectURL(file[0].files[0]), userID);
-    });
+    
+//     var file = document.querySelector(".upload");
+//     file.onchange = function () {
+//         Array.from(this.files).forEach(fileItem => {
+//         var reader = new FileReader();
+//         reader.readAsDataURL(fileItem);
+//         reader.onload = function() {
+//             console.log(fileItem)
+//             console.log(reader.result)
+//             sendMes(1, reader.result, userID);
+//         }
+//     })
+// }
+var file = $(".upload");
+file.change(function () {
+    sendMes(1, getObjectURL(file[0].files[0]), userID);
+});
+// sendMes(1, getObjectURL(file[0].files[0]), userID);
 });

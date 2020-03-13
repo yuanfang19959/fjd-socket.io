@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://106.14.135.233:3002');
 
 socket.on('userID', function (data) {
     const user = sessionStorage.getItem('userID');
