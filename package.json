@@ -1,0 +1,23 @@
+{
+  "name": "wschat",
+  "version": "1.0.0",
+  "description": "chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanfang19959/fjd-socket.io.git"
+  },
+  "keywords": [
+    "express",
+    "sokect"
+  ],
+  "author": "zzb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuanfang19959/fjd-socket.io/issues"
+  },
+  "homepage": "https://github.com/yuanfang19959/fjd-socket.io#readme"
+}
